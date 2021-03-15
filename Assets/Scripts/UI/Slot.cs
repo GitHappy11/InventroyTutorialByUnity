@@ -9,12 +9,31 @@ public class Slot : MonoBehaviour
     public Image imgitem;
     public Text itemNum;
 
+    public string slotInfo;
+
+    public GameObject itemInSlot;
+
     private void Awake()
     {
-        GetComponent<Button>().onClick.AddListener(() =>
+        
+    }
+
+    public void SetUpSlot(Item item)
+    {
+        if (item==null)
         {
-            BagManager.UpdateInfo(item.info);
-        });
+            itemInSlot.SetActive(false);
+            return;
+        }
+
+        imgitem.sprite = item.img;
+        itemNum.text = item.num.ToString();
+        slotInfo = item.info;
+    }
+
+    public void ItemOnClick()
+    {
+        BagManager.UpdateInfo(slotInfo);
     }
 
 }
