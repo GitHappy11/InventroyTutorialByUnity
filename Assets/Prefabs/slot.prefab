@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalparent: {fileID: 0}
+  myBag: {fileID: 11400000, guid: 48864338470f51a4fb8de900434d0769, type: 2}
+  currentBagID: 0
 --- !u!225 &8945965283378202434
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -269,6 +271,7 @@ MonoBehaviour:
   imgitem: {fileID: 2246710107393905695}
   itemNum: {fileID: 1126196637672010701}
   slotInfo: 
+  bagID: 0
   itemInSlot: {fileID: 1731561867}
 --- !u!114 &1126196638010339924
 MonoBehaviour:

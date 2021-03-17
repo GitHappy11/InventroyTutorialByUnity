@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BagManager : MonoBehaviour
 {
     private static BagManager instance;
-    private Dictionary<Item, Slot> slotDict=new Dictionary<Item, Slot>();
+    //private Dictionary<Item, Slot> slotDict=new Dictionary<Item, Slot>();
     public Bag bag;
     //public Slot slotPrefab;
     //与不拖拽的背包区分一下，能够拖拽的背包是一开始就把背包列表填满（包括UI和ObjectScripts）然后Slot拖拽里面的按钮【以更换按钮位置来实现更换装备位置】
@@ -96,6 +96,8 @@ public class BagManager : MonoBehaviour
             instance.slotLst.Add(empSlot) ;
             //设置父物体
             instance.slotLst[i].transform.SetParent(instance.slotGrid.transform);
+            //设置该背包格的ID，有了这个ID，就能记住它到底是哪个格的了，记录排序
+            instance.slotLst[i].GetComponent<Slot>().bagID = i;
             //生成物品
             instance.slotLst[i].GetComponent<Slot>().SetUpSlot(instance.bag.itemList[i]);
         }

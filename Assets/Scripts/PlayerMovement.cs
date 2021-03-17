@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             objMenu.SetActive(!objMenu.activeSelf);
+            if (objMenu.activeSelf)
+            {
+                BagManager.RefreshUI();
+            }
         }
     }
 }
